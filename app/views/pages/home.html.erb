@@ -1,0 +1,10 @@
+<h4>Welcome</h4><h4><%= current_user.name %></h4>
+<h7>your bank account number is: <%=current_user.bank_accounts.first.account_number %></h7></br>
+<h7>balance is : <%= current_user.bank_accounts.first.balance%></h7>
+
+<%= link_to 'Deposit money', edit_bank_account_path(current_user.bank_accounts.first,'deposit') %>
+<%= link_to 'Withdraw money', edit_bank_account_path(current_user.bank_accounts.first,'withdraw') %>
+
+<%= link_to 'transfer money', bank_account_transfer_money_path(current_user.bank_accounts.first,'transfer') %>
+<%= link_to 'All transaction', account_transactions_path %>
+

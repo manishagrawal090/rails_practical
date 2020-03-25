@@ -1,0 +1,16 @@
+<h2><%=@type %> money</h2>
+
+<%= form_with(model: @account, local: true) do |form| %>
+  <p> <%= hidden_field_tag 'type', @type  %></p>
+  <p>
+    <%= form.label :amount %><br>
+    <%= form.text_field :amount %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Back', pages_home_path %>
